@@ -1,5 +1,39 @@
 package sk.michal.ormSimpleFramework.dbaccess;
 
+import sk.michal.ormSimpleFramework.exceptions.AnnotationMissingException;
+import sk.michal.ormSimpleFramework.reflection.ObjectReflector;
+import sk.michal.ormSimpleFramework.sql.SqlBuilder;
+
+import java.sql.ResultSet;
+import java.util.List;
+
 public class SormManager {
+    public <T> T getEntityByid(Long id, Class<T> clazz) {
+        if (id == null){
+            throw new IllegalArgumentException("ID nemoze byt prazdne");
+        }
+        if (!ObjectReflector.isTable(clazz)) {
+            throw new AnnotationMissingException("Objekt nema anotaciu tabulka.");
+        }else {
+            System.out.println("is table" +clazz.getName());
+        }
+
+        //nacitame data z db
+        ResultSet result = loadData(id, clazz);
+        //nasetujeme na objekt
+        return null;
+    }
+
+    private <T> ResultSet loadData(Long id, Class<T> clazz) {
+        String tableName = ObjectReflector.getTableName(clazz);
+        List<String> tableColumns = ObjectReflector.getColumnNames(clazz);
+        String idColumnName = ObjectReflector.getIdColumnName(clazz);
+
+        String query = SqlBuilder.buildQuery(id, tableName, idColumnName, tableColumns);
+        System.out.println(query);
+        //ziskat resultSet
+
+        return null;
+    }
 
 }
