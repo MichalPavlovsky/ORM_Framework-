@@ -17,9 +17,48 @@ public class Osoba {
     private String priezvisko;
 
     @Stlpec("AGE")
-    private int vek;
+    private Integer vek;
 
     @Stlpec("ADDRESS")
     private String adresa;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getMeno() {
+        return meno;
+    }
+
+    public void setMeno(String meno) {
+        this.meno = meno;
+    }
+
+    public String getPriezvisko() {
+        return priezvisko;
+    }
+
+    public void setPriezvisko(String priezvisko) {
+        this.priezvisko = priezvisko;
+    }
+
+    public Integer getVek() {
+        return vek;
+    }
+
+    public void setVek(Integer vek) {
+        this.vek = vek;
+    }
+
+    public String getAdresa() {
+        return adresa;
+    }
+
+    public void setAdresa(String adresa) {
+        this.adresa = adresa;
+    }
 }

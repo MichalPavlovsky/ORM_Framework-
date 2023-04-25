@@ -7,6 +7,7 @@ import sk.michal.ormSimpleFramework.exceptions.MissingException;
 import sk.michal.ormSimpleFramework.exceptions.MissingStlpecAnnotationException;
 
 import java.lang.reflect.Field;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,9 +44,32 @@ public class ObjectReflector {
             }
         }
         if (idColumnName == null)
-                throw new MissingException("Chyba anotacia Id v entite" + clazz.getName());
-            System.out.println("Stlpec s ID: " + idColumnName);
+            throw new MissingException("Chyba anotacia Id v entite" + clazz.getName());
+        System.out.println("Stlpec s ID: " + idColumnName);
 
-            return idColumnName;
-        }
+        return idColumnName;
     }
+
+    public static <T> T getFilledData(ResultSet result, Class<T> clazz) throws Exception {
+        T object = null;
+        object = clazz.newInstance();
+        for (Field f : object.getClass().getDeclaredFields()) {
+            f.setAccessible(true); //mozem upravovat privatny field
+            if (f.isAnnotationPresent(Stlpec.class)) {
+                String typElementu = f.getType().getName();
+                String nazovStlpca = f.getAnnotation(Stlpec.class).value();
+                if (typElementu.equals(String.class.getName())) {
+                    f.set(object, result.getString(nazovStlpca));
+
+                } else if (typElementu.equals(Long.class.getName())) {
+                    f.set(object, result.getLong(nazovStlpca));
+                } else if (typElementu.equals(Integer.class.getName())) {
+                    f.set(object, result.getInt(nazovStlpca));
+
+                }
+            }
+
+        }
+        return object;
+    }
+}

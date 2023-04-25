@@ -5,10 +5,13 @@ import sk.michal.ormSimpleFramework.reflection.ObjectReflector;
 import sk.michal.ormSimpleFramework.sql.SqlBuilder;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 public class SormManager {
-    public <T> T getEntityByid(Long id, Class<T> clazz) {
+    public <T> T getEntityByid(Long id, Class<T> clazz) throws Exception {
+
+        T o = null;
         if (id == null){
             throw new IllegalArgumentException("ID nemoze byt prazdne");
         }
@@ -20,8 +23,10 @@ public class SormManager {
 
         //nacitame data z db
         ResultSet result = loadData(id, clazz);
+        System.out.println(result.getString("ADDRESS"));
+        o= ObjectReflector.getFilledData(result, clazz);
         //nasetujeme na objekt
-        return null;
+        return o;
     }
 
     private <T> ResultSet loadData(Long id, Class<T> clazz) {
@@ -32,8 +37,9 @@ public class SormManager {
         String query = SqlBuilder.buildQuery(id, tableName, idColumnName, tableColumns);
         System.out.println(query);
         //ziskat resultSet
+        DataBaseAccess dataBaseAccess = new DataBaseAccess();
 
-        return null;
+        return dataBaseAccess.executeQuery(query);
     }
 
 }
