@@ -3,10 +3,12 @@ package sk.michal.ormSimpleFramework.dbaccess;
 import sk.michal.ormSimpleFramework.exceptions.AnnotationMissingException;
 import sk.michal.ormSimpleFramework.reflection.ObjectReflector;
 import sk.michal.ormSimpleFramework.sql.SqlBuilder;
+import sk.michal.testovaciProgram.entity.Film;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 public class SormManager {
     public <T> T getEntityByid(Long id, Class<T> clazz) throws Exception {
@@ -42,4 +44,16 @@ public class SormManager {
         return dataBaseAccess.executeQuery(query);
     }
 
+    public <T> void insertEntity(T object) throws InstantiationException, IllegalAccessException, NoSuchFieldException {
+        Class<?> clazz = object.getClass();
+        String tableName = ObjectReflector.getTableName(clazz);
+        List<String> tableColumns = ObjectReflector.getColumnNames(clazz);
+
+        Map<String, Object> data = ObjectReflector.getObjectData(clazz);
+//        String query = SqlBuilder.buildInsertQuery(tableName, tableColumns, data);
+//        DataBaseAccess dataBaseAccess = new DataBaseAccess();
+//        dataBaseAccess.insert(query);
+//        System.out.println(query);
+        //insert into MOVIE(REZISER, HLAVNA_ULOHA, ID) VALUES ('', '',0);
+    }
 }

@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8eea55ff-5dfd-469e-835e-da21ab0345f8" name="Changes" comment="Create fictitious query">
-      <change afterPath="$PROJECT_DIR$/src/main/java/sk/michal/ormSimpleFramework/dbaccess/DataBaseAccess.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sk/michal/ormSimpleFramework/dbaccess/ResultSetImpl.java" afterDir="false" />
+    <list default="true" id="8eea55ff-5dfd-469e-835e-da21ab0345f8" name="Changes" comment="Work with fake Database with reflections">
+      <change afterPath="$PROJECT_DIR$/src/main/java/sk/michal/testovaciProgram/entity/Film.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sk/michal/ormSimpleFramework/dbaccess/SormManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/michal/ormSimpleFramework/dbaccess/SormManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sk/michal/ormSimpleFramework/reflection/ObjectReflector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/michal/ormSimpleFramework/reflection/ObjectReflector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sk/michal/testovaciProgram/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/michal/testovaciProgram/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/michal/testovaciProgram/entity/Osoba.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/michal/testovaciProgram/entity/Osoba.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,11 +27,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -55,7 +53,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Program Files/Projekty/ULOHYpokrocile",
+    "last_opened_file_path": "C:/Program Files/Projekty/ORM_Framework",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.7034483"
@@ -136,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682356190962</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Work with fake Database with reflections">
+      <created>1682446045352</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1682446045352</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -155,6 +160,7 @@
     <MESSAGE value="Basic" />
     <MESSAGE value="Add osoba, anotations" />
     <MESSAGE value="Create fictitious query" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create fictitious query" />
+    <MESSAGE value="Work with fake Database with reflections" />
+    <option name="LAST_COMMIT_MESSAGE" value="Work with fake Database with reflections" />
   </component>
 </project>

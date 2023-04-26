@@ -5,13 +5,19 @@ import sk.michal.ormSimpleFramework.anotacie.Stlpec;
 import sk.michal.ormSimpleFramework.anotacie.Tabulka;
 import sk.michal.ormSimpleFramework.exceptions.MissingException;
 import sk.michal.ormSimpleFramework.exceptions.MissingStlpecAnnotationException;
+import sk.michal.testovaciProgram.entity.Film;
 
 import java.lang.reflect.Field;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ObjectReflector {
+    private static Field f;
+    private static Object object;
+
     public static <T> boolean isTable(Class<T> clazz) {
         return clazz.isAnnotationPresent(Tabulka.class);
     }
@@ -71,5 +77,18 @@ public class ObjectReflector {
 
         }
         return object;
+    }
+
+    public static Map<String, Object> getObjectData(Class<?> clazz) throws InstantiationException, IllegalAccessException, NoSuchFieldException {
+        Map<String, Object> data = new HashMap<>();
+        Object object = null;
+        object = clazz.newInstance();
+        for (Field f : clazz.getDeclaredFields())
+            if (f.isAnnotationPresent(Stlpec.class)) {
+                String nazovStlpca = f.getAnnotation(Stlpec.class).value();
+                data.put(nazovStlpca, f.getName());
+                System.out.println(nazovStlpca + f.getName());
+            }
+        return data;
     }
 }
