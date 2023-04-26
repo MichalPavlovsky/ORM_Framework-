@@ -50,10 +50,9 @@ public class SormManager {
         List<String> tableColumns = ObjectReflector.getColumnNames(clazz);
 
         Map<String, Object> data = ObjectReflector.getObjectData(clazz);
-//        String query = SqlBuilder.buildInsertQuery(tableName, tableColumns, data);
-//        DataBaseAccess dataBaseAccess = new DataBaseAccess();
-//        dataBaseAccess.insert(query);
-//        System.out.println(query);
-        //insert into MOVIE(REZISER, HLAVNA_ULOHA, ID) VALUES ('', '',0);
+        String query = SqlBuilder.buildInsertQuery(tableName, tableColumns, data);
+        DataBaseAccess dataBaseAccess = new DataBaseAccess();
+        dataBaseAccess.insert(query);
+
     }
 }

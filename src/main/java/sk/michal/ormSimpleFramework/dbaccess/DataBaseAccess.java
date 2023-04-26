@@ -7,4 +7,8 @@ public class DataBaseAccess {
         return new ResultSetImpl();
 
     }
+
+    public void insert(String query) {
+        System.out.println(query);
+    }
 }

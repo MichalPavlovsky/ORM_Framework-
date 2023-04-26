@@ -80,15 +80,16 @@ public class ObjectReflector {
     }
 
     public static Map<String, Object> getObjectData(Class<?> clazz) throws InstantiationException, IllegalAccessException, NoSuchFieldException {
-        Map<String, Object> data = new HashMap<>();
         Object object = null;
         object = clazz.newInstance();
-        for (Field f : clazz.getDeclaredFields())
+        Map<String, Object> data = new HashMap<>();
+        for (Field f : object.getClass().getDeclaredFields()){
+            f.setAccessible(true);
             if (f.isAnnotationPresent(Stlpec.class)) {
                 String nazovStlpca = f.getAnnotation(Stlpec.class).value();
                 data.put(nazovStlpca, f.getName());
-                System.out.println(nazovStlpca + f.getName());
             }
+        }
         return data;
     }
 }
