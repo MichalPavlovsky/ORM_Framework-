@@ -31,7 +31,7 @@ public class SormManager {
         return o;
     }
 
-    private <T> ResultSet loadData(Long id, Class<T> clazz) {
+    private <T> ResultSet loadData(Long id, Class<T> clazz) throws Exception {
         String tableName = ObjectReflector.getTableName(clazz);
         List<String> tableColumns = ObjectReflector.getColumnNames(clazz);
         String idColumnName = ObjectReflector.getIdColumnName(clazz);
@@ -39,12 +39,26 @@ public class SormManager {
         String query = SqlBuilder.buildQuery(id, tableName, idColumnName, tableColumns);
         System.out.println(query);
         //ziskat resultSet
-        DataBaseAccess dataBaseAccess = new DataBaseAccess();
+        DataBaseAccess dataBaseAccess = null;
+        ResultSet rs = null;
+        try {
+            dataBaseAccess = new DataBaseAccess();
+            rs = dataBaseAccess.executeQuery(query);
+            dataBaseAccess.commit();
+        }catch (Exception e) {
+            if (dataBaseAccess != null) {
+                dataBaseAccess.rollBack();
+            }
+            throw new Exception(e);
+        }finally {
+            if (dataBaseAccess!= null)
+                dataBaseAccess.disconnect();
+        }
 
-        return dataBaseAccess.executeQuery(query);
+        return rs;
     }
 
-    public <T> void insertEntity(T object) throws InstantiationException, IllegalAccessException, NoSuchFieldException {
+    public <T> void insertEntity(T object) throws Exception {
         Class<?> clazz = object.getClass();
         String tableName = ObjectReflector.getTableName(clazz);
         List<String> tableColumns = ObjectReflector.getColumnNames(clazz);

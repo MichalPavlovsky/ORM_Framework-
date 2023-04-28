@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8eea55ff-5dfd-469e-835e-da21ab0345f8" name="Changes" comment="Insert 1. part">
+    <list default="true" id="8eea55ff-5dfd-469e-835e-da21ab0345f8" name="Changes" comment="Insert 2. part">
+      <change afterPath="$PROJECT_DIR$/src/main/java/sk/michal/ormSimpleFramework/dbaccess/PropertiesReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sk/michal/ormSimpleFramework/dbaccess/DataBaseAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/michal/ormSimpleFramework/dbaccess/DataBaseAccess.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sk/michal/ormSimpleFramework/dbaccess/SormManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/michal/ormSimpleFramework/dbaccess/SormManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/michal/ormSimpleFramework/reflection/ObjectReflector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/michal/ormSimpleFramework/reflection/ObjectReflector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/michal/ormSimpleFramework/sql/SqlBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/michal/ormSimpleFramework/sql/SqlBuilder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +52,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Program Files/Projekty/ORM_Framework",
+    "last_opened_file_path": "C:/Program Files/Projekty/ULOHYpokrocile",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.7034483"
@@ -148,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682539071297</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Insert 2. part">
+      <created>1682541639030</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1682541639030</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -169,6 +175,7 @@
     <MESSAGE value="Create fictitious query" />
     <MESSAGE value="Work with fake Database with reflections" />
     <MESSAGE value="Insert 1. part" />
-    <option name="LAST_COMMIT_MESSAGE" value="Insert 1. part" />
+    <MESSAGE value="Insert 2. part" />
+    <option name="LAST_COMMIT_MESSAGE" value="Insert 2. part" />
   </component>
 </project>

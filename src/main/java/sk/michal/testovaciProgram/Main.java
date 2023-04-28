@@ -1,11 +1,10 @@
 package sk.michal.testovaciProgram;
 
 import sk.michal.ormSimpleFramework.dbaccess.SormManager;
-import sk.michal.ormSimpleFramework.reflection.ObjectReflector;
+
 import sk.michal.testovaciProgram.entity.Film;
 import sk.michal.testovaciProgram.entity.Osoba;
 
-import java.sql.SQLException;
 
 public class Main {
     public static void main(String[] args) throws Exception {
