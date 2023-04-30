@@ -66,7 +66,6 @@ public class ObjectReflector {
                 String nazovStlpca = f.getAnnotation(Stlpec.class).value();
                 if (typElementu.equals(String.class.getName())) {
                     f.set(object, result.getString(nazovStlpca));
-
                 } else if (typElementu.equals(Long.class.getName())) {
                     f.set(object, result.getLong(nazovStlpca));
                 } else if (typElementu.equals(Integer.class.getName())) {
